@@ -1,7 +1,10 @@
 from sqlalchemy import URL, create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import DeclarativeBase, sessionmaker
 
 from app.config import settings
+
+class Base(DeclarativeBase):
+    pass
 
 database_url = URL.create(
     drivername="postgresql+psycopg",
